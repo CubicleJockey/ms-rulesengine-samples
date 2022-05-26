@@ -7,6 +7,23 @@ namespace MSRulesEngineSamples
     [TestClass]
     public class SimpleSample
     {
+        [TestMethod]
+        public void GetRegisteredWorkFlows()
+        {
+            //Arrange
+            var (workflowName, engine) = GenerateSimpleRuleEngine();
+
+            //Act
+            var workflows = engine.GetAllRegisteredWorkflowNames();
+
+            workflows.Should().NotBeEmpty();
+            workflows.Count.Should().Be(1);
+
+            var workflow = workflows.Single();
+            workflow.Should().NotBeNullOrWhiteSpace();
+            workflow.Should().Be(workflowName);
+        }
+
         [DataRow(1.99, false)]
         [DataRow(12.56, false)]
         [DataRow(25.16, false)]
@@ -30,35 +47,6 @@ namespace MSRulesEngineSamples
             var theResult = results.Single();
             theResult.Inputs.Count.Should().Be(1);
             theResult.IsSuccess.Should().Be(expectedResult);
-        }
-
-        [DataRow(25.17, 50.30, 99.99, 145.78, true, true, true, true)]
-        [DataRow(1.99, 12.45, 25.15, 99.99, false, false, false, true)]
-        [DataTestMethod]
-        public async Task SimpleRule_MultipleInputs(double price1, double price2, double price3, double price4
-                                    ,bool expectedResult1, bool expectedResult2, bool expectedResult3, bool expectedResult4)
-        {
-            //Arrange
-
-            var (workflowName, engine) = GenerateSimpleRuleEngine();
-
-            var inputs = new[]
-            {
-                new { Price = price1 },
-                new { Price = price2 },
-                new { Price = price3 },
-                new { Price = price4 }
-            };
-
-            //Act
-            var results = await engine.ExecuteAllRulesAsync(workflowName, inputs);
-
-            //Assert
-            results.Count.Should().Be(1);
-
-            var theResult = results.Single();
-            theResult.Inputs.Count.Should().Be(4);
-            theResult.IsSuccess.Should().Be(expectedResult1 && expectedResult2 && expectedResult3 && expectedResult4);
 
             //Some ways to show overall success or failure
             results.OnSuccess(eventName => Console.WriteLine($"'{eventName}' was successful."));
