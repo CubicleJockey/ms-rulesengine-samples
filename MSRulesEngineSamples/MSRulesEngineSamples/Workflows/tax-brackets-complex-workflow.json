@@ -3,7 +3,7 @@
   "Rules": [
     {
       "RuleName": "TaxRate10Percent",
-      "SuccessEvent": "10",
+      "SuccessEvent": "true",
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
@@ -19,7 +19,7 @@
     },
     {
       "RuleName": "TaxRate22Percent",
-      "SuccessEvent": "22",
+      "SuccessEvent": "true",
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
@@ -27,7 +27,7 @@
     },
     {
       "RuleName": "TaxRate24Percent",
-      "SuccessEvent": "24",
+      "SuccessEvent": "true",
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
@@ -35,7 +35,7 @@
     },
     {
       "RuleName": "TaxRate32Percent",
-      "SuccessEvent": "32",
+      "SuccessEvent": "true",
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
@@ -43,7 +43,7 @@
     },
     {
       "RuleName": "TaxRate35Percent",
-      "SuccessEvent": "35",
+      "SuccessEvent": "true",
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
@@ -51,7 +51,7 @@
     },
     {
       "RuleName": "TaxRate37Percent",
-      "SuccessEvent": "37",
+      "SuccessEvent": "true",
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",

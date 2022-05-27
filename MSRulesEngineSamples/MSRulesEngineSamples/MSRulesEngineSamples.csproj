@@ -23,7 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Workflows\tax-bracket-workflow.json">
+    <None Update="Workflows\tax-brackets-complex-workflow.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Workflows\tax-brackets-single-workflow.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,0 +1,61 @@
+{
+  "WorkflowName": "Tax Brackets",
+  "Rules": [
+    {
+      "RuleName": "TaxRate10Percent",
+      "SuccessEvent": "true",
+      "ErrorMessage": "Error in calculating tax brackets",
+      "ErrorType": "Error",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "input1.Income >= 0 AND input1.Income <= 9950"
+    },
+    {
+      "RuleName": "TaxRate12Percent",
+      "SuccessEvent": "12",
+      "ErrorMessage": "Error in calculating tax brackets",
+      "ErrorType": "Error",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "input1.Income >= 9951 AND input1.Income <= 40525"
+    },
+    {
+      "RuleName": "TaxRate22Percent",
+      "SuccessEvent": "true",
+      "ErrorMessage": "Error in calculating tax brackets",
+      "ErrorType": "Error",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "input1.Income >= 40526 AND input1.Income <= 86375"
+    },
+    {
+      "RuleName": "TaxRate24Percent",
+      "SuccessEvent": "true",
+      "ErrorMessage": "Error in calculating tax brackets",
+      "ErrorType": "Error",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "input1.Income >= 86376 AND input1.Income <= 164925"
+    },
+    {
+      "RuleName": "TaxRate32Percent",
+      "SuccessEvent": "true",
+      "ErrorMessage": "Error in calculating tax brackets",
+      "ErrorType": "Error",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "input1.Income >= 164926 AND input1.Income <= 209425"
+    },
+    {
+      "RuleName": "TaxRate35Percent",
+      "SuccessEvent": "true",
+      "ErrorMessage": "Error in calculating tax brackets",
+      "ErrorType": "Error",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "input1.Income >= 209426 AND input1.Income <= 523600"
+    },
+    {
+      "RuleName": "TaxRate37Percent",
+      "SuccessEvent": "true",
+      "ErrorMessage": "Error in calculating tax brackets",
+      "ErrorType": "Error",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "input1.Income >= 523601"
+    }
+  ]
+}
