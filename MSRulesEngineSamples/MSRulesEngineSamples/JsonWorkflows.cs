@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace MSRulesEngineSamples
 {
     [TestClass]
-    public class JsonWorkflows
+    public class JsonWorkflows : BaseHelpers
     {
         [DataRow(8750, "TaxRate10Percent")]
         [DataRow(37812, "TaxRate12Percent")]
@@ -77,17 +77,5 @@ namespace MSRulesEngineSamples
             var failed = results.Where(result => result.Rule.RuleName != successfulRule);
             failed.All(result => result.IsSuccess == false).Should().BeTrue();
         }
-
-        #region Helper Methods
-
-        private static async Task<string> LoadJsonWorkFlows(string fileName)
-        {
-            var content = await File.ReadAllTextAsync(Path.Combine("Workflows", fileName));
-            if (string.IsNullOrWhiteSpace(content)) { throw new Exception($"Failed to load file: {fileName}"); }
-            var asObject = JsonConvert.DeserializeObject(content);
-            return JsonConvert.SerializeObject(asObject);
-        }
-
-        #endregion Helper Methods
     }
 }

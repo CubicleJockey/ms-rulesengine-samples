@@ -1,0 +1,13 @@
+{
+  "WorkflowName": "Bar Entrance Workflow",
+  "Rules": [
+    {
+      "RuleName": "At least 21 years old and not a Karen",
+      "SuccessEvent": "true",
+      "ErrorMessage": "You are either not 21 or you're a Karen!",
+      "ErrorType": "Error",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "person.Age >= 21 AND person.Name != \"Karen\""
+    }
+  ]
+}
