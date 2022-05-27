@@ -7,7 +7,7 @@
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
-      "Expression": "input1.Income >= 0 AND input1.Income <= 9950"
+      "Expression": "input1.IsMarried ? (input1.Income >= 0 AND input1.Income <= 19900) : (input1.Income >= 0 AND input1.Income <= 9950)"
     },
     {
       "RuleName": "TaxRate12Percent",
@@ -15,7 +15,7 @@
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
-      "Expression": "input1.Income >= 9951 AND input1.Income <= 40525"
+      "Expression": "input1.IsMarried ? (input1.Income >= 19901 AND input1.Income <= 81050) : (input1.Income >= 9951 AND input1.Income <= 40525)"
     },
     {
       "RuleName": "TaxRate22Percent",
@@ -23,7 +23,7 @@
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
-      "Expression": "input1.Income >= 40526 AND input1.Income <= 86375"
+      "Expression": "input1.IsMarried ? (input1.Income >= 81051 AND input1.Income <= 172750) : (input1.Income >= 40526 AND input1.Income <= 86375)"
     },
     {
       "RuleName": "TaxRate24Percent",
@@ -31,7 +31,7 @@
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
-      "Expression": "input1.Income >= 86376 AND input1.Income <= 164925"
+      "Expression": "input1.IsMarried ? (input1.Income >= 172751 AND input1.Income <= 329850) : (input1.Income >= 86376 AND input1.Income <= 164925)"
     },
     {
       "RuleName": "TaxRate32Percent",
@@ -39,7 +39,7 @@
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
-      "Expression": "input1.Income >= 164926 AND input1.Income <= 209425"
+      "Expression": "input1.IsMarried ? (input1.Income >= 329851 AND input1.Income <= 418850) : (input1.Income >= 164926 AND input1.Income <= 209425)"
     },
     {
       "RuleName": "TaxRate35Percent",
@@ -47,7 +47,7 @@
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
-      "Expression": "input1.Income >= 209426 AND input1.Income <= 523600"
+      "Expression": "input1.IsMarried ? (input1.Income >= 418851 AND input1.Income <= 628300) : (input1.Income >= 209426 AND input1.Income <= 523600)"
     },
     {
       "RuleName": "TaxRate37Percent",
@@ -55,7 +55,7 @@
       "ErrorMessage": "Error in calculating tax brackets",
       "ErrorType": "Error",
       "RuleExpressionType": "LambdaExpression",
-      "Expression": "input1.Income >= 523601"
+      "Expression": "input1.IsMarried ? (input1.Income > 628300) : (input1.Income > 523600)"
     }
   ]
 }
